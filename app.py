@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 import sys
 import traceback
@@ -88,6 +88,14 @@ def visualize_code():
 
     execution_trace, output = trace_code_execution(code)
     return jsonify({"execution_trace": execution_trace, "output": output})
+
+@app.route("/", methods=["GET", "POST"])
+def start():
+    return render_template("index.html")
+
+@app.route("/page2", methods=["GET", "POST"])
+def page2():
+    return render_template("page2.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
