@@ -1,0 +1,60 @@
+/* Ensure PyScript elements are hidden if not defined */
+py-config,
+py-script:not(:defined),
+py-repl:not(:defined),
+py-title:not(:defined),
+py-inputbox:not(:defined),
+py-button:not(:defined),
+py-box:not(:defined) {
+  display: none;
+}
+
+/* General styles for PyScript */
+html {
+  font-family: 
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+  line-height: 1.5;
+}
+
+/* Terminal styles */
+.py-terminal {
+    min-height: 10em;
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.py-terminal-hidden {
+    display: none;
+}
+
+html:has(py-terminal[docked]:not(py-terminal[docked].py-terminal-hidden)) {
+    padding-bottom: 40vh; 
+}
+
+py-terminal[docked] {
+    position: fixed;
+    bottom: 0;
+    width: 50.65vw; /* Half of the viewport width */
+    max-height: 40vh; /* Maximum height set to half the viewport height */
+    overflow: scroll; /* Prevent scrolling */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+py-terminal[docked] .py-terminal {
+    margin: 0;
+}

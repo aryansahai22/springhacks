@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.urbanist-header {
+    font-family: "Urbanist", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* General styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #87CEEB;
+    color: #fff;
+    padding: 0 20px; /* Adjusted padding */
+    height: 80px; /* Height of the header */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute space between title and nav */
+    box-sizing: border-box;
+    position: fixed;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between; /* Space out children */
+}
+
+nav {
+    margin-left: auto; /* Push nav to the right */
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px; /* Space between navigation items */
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    padding: 5px 10px;
+    display: block;
+}
+
+.nav-links a:hover {
+    background-color: #005f73;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 100px); /* Subtract header height */
+    margin-top: 90px; /* Header height */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.left {
+    flex: 1;
+    background-color: #f2f2f2;
+    position: relative; /* Position relative to manage children */
+    overflow: hidden; /* Prevent overflow */
+    padding: 10px; /* Add padding to avoid content touching edges */
+    box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+.right {
+    flex: 1;
+    background-color: #cce7ff;
+}
+
+/* Container for textarea and button */
+.textarea-container {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Textarea styles */
+textarea {
+    width: calc(100% - 20px); /* Full width minus padding */
+    height: calc(100% - 50px); /* Full height minus button height and padding */
+    padding: 10px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    resize: none; /* Prevent resizing */
+}
+
+/* Button styles */
+#run_button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 100; /* Ensure the button is above other content */
+}
+
+/* Adjust the output container if needed */
+#output {
+    position: relative;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
