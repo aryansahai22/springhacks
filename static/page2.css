@@ -50,7 +50,7 @@ nav {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 15px;
+    gap: 20px;
 }
 
 .nav-links li {
@@ -132,4 +132,54 @@ ul.about-paragraph {
     list-style-type: none;
     padding: 0;
     margin: 0;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+/* Slides */
+.slide {
+    position: relative;
+    width: 30%;
+    margin: 10px;
+}
+
+/* Developer photos */
+.developer-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    width: 80%;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 10px;
+}
+
+/* Show overlay on hover */
+.slide:hover .overlay {
+    opacity: 1;
+}
+
+/* Make sure the text is visible */
+.overlay {
+    font-size: 1em;
+    line-height: 1.5;
 }
