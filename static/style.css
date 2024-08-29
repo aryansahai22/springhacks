@@ -88,6 +88,7 @@ nav {
 .right {
     flex: 1;
     background-color: #cce7ff;
+    padding-left: 20px;
 }
 
 /* Container for textarea and button */
@@ -108,12 +109,41 @@ textarea {
     resize: none; /* Prevent resizing */
 }
 
-/* Button styles */
+/* Run Button Styling */
+.run-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+}
+
 #run_button {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    z-index: 100; /* Ensure the button is above other content */
+    right: 25px; /* Aligns the button to the right edge */
+    bottom: -15px;
+    background-color: #87CEEB; /* Green background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 8px 10px; /* Some padding */
+    text-align: inline; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the container fit the content */
+    font-size: 16px; /* Increase font size */
+    margin-top: 5px; /* Add some space above */
+    border-radius: 12px; /* Rounded corners */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+#run_button:hover {
+    background-color: #62c5ec; /* Darker green on hover */
+}
+
+.shortcut {
+    font-size: 10px; /* Smaller font for the shortcut hint */
+    color: white; /* Light gray color for the shortcut */
+    margin-top: 5px; /* Space between the button and the text */
+    display: block; /* Ensure it's on a new line */
 }
 
 /* Adjust the output container if needed */

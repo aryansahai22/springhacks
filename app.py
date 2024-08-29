@@ -1,11 +1,15 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 import sys
 import traceback
+import io
 
 app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
 def trace_code_execution(code):
     trace_data = []
+    output_capture = io.StringIO()
 
     def trace_function(frame, event, arg):
         if event == "call":
@@ -45,6 +49,7 @@ def trace_code_execution(code):
         return trace_function
 
     sys.settrace(trace_function)
+    sys.stdout = output_capture  # Redirect stdout to capture print statements
     try:
         exec(code, {})
     except Exception:
@@ -55,8 +60,11 @@ def trace_code_execution(code):
         })
     finally:
         sys.settrace(None)
+        sys.stdout = sys.__stdout__  # Reset stdout to original
 
-    return trace_data
+    output_capture.seek(0)
+    output = output_capture.read()
+    return trace_data, output
 
 def safe_locals(local_vars):
     safe_vars = {}
@@ -78,16 +86,8 @@ def visualize_code():
     if not code:
         return jsonify({"error": "No code provided"}), 400
 
-    execution_trace = trace_code_execution(code)
-    return jsonify({"execution_trace": execution_trace})
-
-@app.route("/", methods=["GET", "POST"])
-def start():
-    return render_template("index.html")
-
-@app.route("/page2", methods=["GET", "POST"])
-def page2():
-    return render_template("page2.html")
+    execution_trace, output = trace_code_execution(code)
+    return jsonify({"execution_trace": execution_trace, "output": output})
 
 if __name__ == "__main__":
     app.run(debug=True)
