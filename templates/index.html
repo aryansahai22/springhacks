@@ -64,7 +64,7 @@ document.getElementById('input_text').addEventListener('keydown', function(event
         document.getElementById('run_button').addEventListener('click', function() {
     const code = document.getElementById('input_text').value;
 
-    fetch('http://127.0.0.1:5000/visualize', {
+    fetch('https://springhacks.onrender.com/visualize', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
