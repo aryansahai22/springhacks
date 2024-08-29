@@ -1,183 +1,186 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-.urbanist-header {
-    font-family: "Urbanist", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
+    .urbanist-header {
+        font-family: "Urbanist", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 700;
+        font-style: normal;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
 
-/* General styles */
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
+    /* General styles */
+    body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
 
-header {
-    background-color: #87CEEB;
-    color: #fff;
-    padding: 0 20px; /* Adjusted padding */
-    height: 80px; /* Height of the header */
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Distribute space between title and nav */
-    box-sizing: border-box;
-    position: fixed;
-}
+    header {
+        background-color: #87CEEB;
+        color: #fff;
+        padding: 0 20px;
+        height: 80px;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        display: flex;
+        align-items: center; /* Center content vertically */
+        justify-content: space-between; /* Space out title and nav */
+        box-sizing: border-box;
+        position: fixed;
+    }
 
-.header-content {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between; /* Space out children */
-}
+    .header-content {
+        display: flex;
+        align-items: center; /* Align items vertically */
+        width: 100%;
+        justify-content: space-between; /* Space out title and nav */
+    }
 
-nav {
-    margin-left: auto; /* Push nav to the right */
-}
+    nav {
+        display: flex;
+        align-items: center; /* Center nav items vertically */
+    }
 
-.nav-links {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 15px; /* Space between navigation items */
-}
+    .nav-links {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 15px;
+    }
 
-.nav-links li {
-    display: inline;
-}
+    .nav-links li {
+        padding-top: 7%;
+        display: inline;
+    }
 
-.nav-links a {
-    text-decoration: none;
-    color: white;
-    font-weight: 600;
-    padding: 5px 10px;
-    display: block;
-}
+    .nav-links a {
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        display: block;
+        line-height: 50px; /* Adjusted to match the header content alignment */
+    }
 
-.nav-links a:hover {
-    background-color: #005f73;
-    border-radius: 5px;
-}
+    .nav-links a:hover {
+        background-color: #005f73;
+        border-radius: 5px;
+    }
 
-.container {
-    display: flex;
-    height: calc(100vh - 100px); /* Subtract header height */
-    margin-top: 90px; /* Header height */
-    box-sizing: border-box; /* Include padding in the element's total width and height */
-}
 
-.left {
-    flex: 1;
-    background-color: #f2f2f2;
-    position: relative; /* Position relative to manage children */
-    overflow: hidden; /* Prevent overflow */
-    padding: 10px; /* Add padding to avoid content touching edges */
-    box-sizing: border-box; /* Include padding in the element's total width and height */
-}
+    .container {
+        display: flex;
+        height: calc(100vh - 100px); /* Subtract header height */
+        margin-top: 80px; /* Header height */
+        box-sizing: border-box; /* Include padding in the element's total width and height */
+    }
 
-.right {
-    flex: 1;
-    background-color: #cce7ff;
-    padding-left: 20px;
-}
+    .left {
+        flex: 1;
+        background-color: #f2f2f2;
+        position: relative; /* Position relative to manage children */
+        overflow: hidden; /* Prevent overflow */
+        padding: 10px; /* Add padding to avoid content touching edges */
+        box-sizing: border-box; /* Include padding in the element's total width and height */
+    }
 
-/* Container for textarea and button */
-.textarea-container {
-    position: relative;
-    height: 50%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
+    .right {
+        flex: 1;
+        background-color: #cce7ff;
+        padding-left: 20px;
+    }
 
-/* Textarea styles */
-textarea {
-    width: calc(100% - 20px); /* Full width minus padding */
-    height: calc(100% - 50px); /* Full height minus button height and padding */
-    padding: 10px;
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    resize: none; /* Prevent resizing */
-}
+    /* Container for textarea and button */
+    .textarea-container {
+        position: relative;
+        height: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 
-/* Run Button Styling */
-.run-button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 5px;
-}
+    /* Textarea styles */
+    textarea {
+        width: calc(100% - 20px); /* Full width minus padding */
+        height: calc(100% - 50px); /* Full height minus button height and padding */
+        padding: 10px;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        resize: none; /* Prevent resizing */
+    }
 
-#run_button {
-    position: absolute;
-    right: 25px; /* Aligns the button to the right edge */
-    bottom: -15px;
-    background-color: #87CEEB; /* Green background */
-    border: none; /* Remove borders */
-    color: white; /* White text */
-    padding: 8px 10px; /* Some padding */
-    text-align: inline; /* Center the text */
-    text-decoration: none; /* Remove underline */
-    display: inline-block; /* Make the container fit the content */
-    font-size: 16px; /* Increase font size */
-    margin-top: 5px; /* Add some space above */
-    border-radius: 12px; /* Rounded corners */
-    cursor: pointer; /* Add a pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition for background color */
-}
+    /* Run Button Styling */
+    .run-button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 5px;
+    }
 
-#run_button:hover {
-    background-color: #62c5ec; /* Darker green on hover */
-}
+    #run_button {
+        position: absolute;
+        right: 25px; /* Aligns the button to the right edge */
+        bottom: -15px;
+        background-color: #87CEEB; /* Green background */
+        border: none; /* Remove borders */
+        color: white; /* White text */
+        padding: 8px 10px; /* Some padding */
+        text-align: inline; /* Center the text */
+        text-decoration: none; /* Remove underline */
+        display: inline-block; /* Make the container fit the content */
+        font-size: 16px; /* Increase font size */
+        margin-top: 5px; /* Add some space above */
+        border-radius: 12px; /* Rounded corners */
+        cursor: pointer; /* Add a pointer cursor on hover */
+        transition: background-color 0.3s ease; /* Smooth transition for background color */
+    }
 
-.shortcut {
-    font-size: 10px; /* Smaller font for the shortcut hint */
-    color: white; /* Light gray color for the shortcut */
-    margin-top: 5px; /* Space between the button and the text */
-    display: block; /* Ensure it's on a new line */
-}
+    #run_button:hover {
+        background-color: #62c5ec; /* Darker green on hover */
+    }
 
-/* Adjust the output container if needed */
-#output {
-    position: relative;
-    height: 50%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
+    .shortcut {
+        font-size: 10px; /* Smaller font for the shortcut hint */
+        color: white; /* Light gray color for the shortcut */
+        margin-top: 5px; /* Space between the button and the text */
+        display: block; /* Ensure it's on a new line */
+    }
 
-a {
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-}
+    /* Adjust the output container if needed */
+    #output {
+        position: relative;
+        height: 50%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 
-.right {
-    background-color: #e0f7fa; /* Light blue background */
-    padding: 20px;
-    height: 100%; /* Make sure it takes the full height */
-    overflow-y: scroll; /* Enable vertical scrolling */
-    overflow-x: auto; /* Enable horizontal scrolling if needed */
-    white-space: pre-wrap; /* Preserve formatting */
-    word-wrap: break-word; /* Break long words */
-    max-height: 600px; /* Set a maximum height if needed */
-    border-radius: 10px; /* Add rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow for aesthetics */
-}
-.right h2 {
-    margin-top: -40px; /* Adjust this value to reduce space */
-}
+    a {
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+    }
 
-.right pre {
-    margin-top: -40px;  /* Reduce space between the heading and the content */
-    padding-top: 0px; /* Ensure no extra padding is added */
-    line-height: 1.5; /* Adjust line height if needed */
-}
+    .right {
+        background-color: #e0f7fa; /* Light blue background */
+        padding: 20px;
+        height: 100%; /* Make sure it takes the full height */
+        overflow-y: scroll; /* Enable vertical scrolling */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+        white-space: pre-wrap; /* Preserve formatting */
+        word-wrap: break-word; /* Break long words */
+        max-height: 600px; /* Set a maximum height if needed */
+        border-radius: 10px; /* Add rounded corners */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow for aesthetics */
+    }
+    .right h2 {
+        margin-top: -40px; /* Adjust this value to reduce space */
+    }
+
+    .right pre {
+        margin-top: -40px;  /* Reduce space between the heading and the content */
+        padding-top: 0px; /* Ensure no extra padding is added */
+        line-height: 1.5; /* Adjust line height if needed */
+    }

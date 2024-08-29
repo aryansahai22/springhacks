@@ -20,28 +20,29 @@ body, html {
 header {
     background-color: #87CEEB;
     color: #fff;
-    padding: 0 20px; /* Adjusted padding */
-    height: 80px; /* Height of the header */
+    padding: 0 20px;
+    height: 80px;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Distribute space between title and nav */
+    align-items: center; /* Center content vertically */
+    justify-content: space-between; /* Space out title and nav */
     box-sizing: border-box;
     position: fixed;
 }
 
 .header-content {
     display: flex;
-    align-items: center;
+    align-items: center; /* Align items vertically */
     width: 100%;
-    justify-content: space-between; /* Space out children */
+    justify-content: space-between; /* Space out title and nav */
 }
 
 nav {
-    margin-left: auto; /* Push nav to the right */
+    display: flex;
+    align-items: center; /* Center nav items vertically */
 }
 
 .nav-links {
@@ -49,10 +50,11 @@ nav {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 15px; /* Space between navigation items */
+    gap: 15px;
 }
 
 .nav-links li {
+    padding-top: 7%;
     display: inline;
 }
 
@@ -60,8 +62,8 @@ nav {
     text-decoration: none;
     color: white;
     font-weight: 600;
-    padding: 5px 10px;
     display: block;
+    line-height: 50px; /* Adjusted to match the header content alignment */
 }
 
 .nav-links a:hover {
@@ -70,11 +72,10 @@ nav {
 }
 
 .about {
-    background-color: #f2f2f2;
-    height: calc(100vh - 60px); /* Adjusted height for the .about section */
-    margin-top: 90px; /* Space for the header */
+    background-color: #f8f8f8;
+    height: calc(100vh - 80px); /* Adjusted height to account for the header */
+    margin-top: 80px; /* Space for the header */
     box-sizing: border-box;
-    text-align: center;
     padding: 2%;
     color: black;
 }
@@ -82,4 +83,53 @@ nav {
 a {
     text-decoration: none;
     color: rgb(255, 255, 255);
+}
+
+.about-content {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Flexbox section for info boxes */
+.info-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+}
+
+.info-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-5px);
+}
+
+.urbanist-header {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.about-paragraph {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    text-align: left; /* Align text to the left */
+    margin: 0;
+}
+
+ul.about-paragraph {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
